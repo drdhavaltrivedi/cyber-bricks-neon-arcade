@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cyber-bricks-neon-arcade.vercel.app/sitemap.xml
+Sitemap: https://cyber-bricks.brilworks.com/sitemap.xml
