@@ -904,6 +904,9 @@ input:checked + .slider:before {
 }
 
 .store-icon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   transition: transform var(--transition);
   display: flex;
   align-items: center;
