@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cyber-bricks-neon-arcade.vercel.app/sitemap.xml

@@ -1050,3 +1050,45 @@ input:checked + .slider:before {
     height: auto;
   }
 }
+
+/* --- FAQ Section (SEO/AEO/GEO) --- */
+.faq-section {
+  padding: 80px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.faq-card {
+  padding: 30px;
+  text-align: left;
+}
+
+.faq-card h4 {
+  font-family: var(--font-orbitron);
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  border-left: 2px solid var(--secondary-color);
+  padding-left: 10px;
+}
+
+.faq-card p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 750px) {
+  .faq-container {
+    grid-template-columns: 1fr;
+  }
+}
