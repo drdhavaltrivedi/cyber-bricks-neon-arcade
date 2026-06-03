@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber-Bricks: Neon Arcade | Premium Browser Extension Game</title>
+  <meta name="description" content="A premium, retro-synthwave brick breaker arcade game that sits right in your browser extension toolbar. Play instantly, collect power-ups, and enjoy synthesized audio.">
+  
+  <!-- Google Fonts for futuristic cyberpunk aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-magenta">
+  <!-- Glowing Background Orbs -->
+  <div class="glow-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-txt">CYBER-BRICKS</span>
+        <span class="logo-sub">NEON ARCADE</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features">FEATURES</a></li>
+        <li><a href="#demo">LIVE DEMO</a></li>
+        <li><a href="#stores">INSTALLATION</a></li>
+      </ul>
+      <a href="#stores" class="nav-cta">GET EXTENSION</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>MANIFEST V3 COMPLIANT</span>
+        </div>
+        <h1>BREAK THE GRID.<br>DOMINATE THE PROTOCOL.</h1>
+        <p>A premium retro-synthwave brick breaker extension built directly into your browser. Bounce, fire lasers, bend physics, and enjoy synthesized retro sound effects without leaving your current tab.</p>
+        
+        <div class="hero-ctas">
+          <a href="#stores" class="btn btn-primary">ADD TO BROWSER</a>
+          <a href="#demo" class="btn btn-secondary">PLAY LIVE DEMO</a>
+        </div>
+      </div>
+      
+      <div class="hero-preview">
+        <!-- Floating glass interactive mockup -->
+        <div class="mockup-frame glass-panel">
+          <div class="mockup-header">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+            <span class="mockup-title">Cyber-Bricks Extension Popup</span>
+          </div>
+          <div class="mockup-body">
+            <!-- Simulated interface view -->
+            <div class="mockup-grid">
+              <div class="mockup-rect cyan"></div>
+              <div class="mockup-rect magenta"></div>
+              <div class="mockup-rect amber"></div>
+              <div class="mockup-rect cyan"></div>
+              <div class="mockup-rect magenta"></div>
+            </div>
+            <div class="mockup-ball"></div>
+            <div class="mockup-paddle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="section-header">
+      <span class="section-tag">SYSTEM DETAILS</span>
+      <h2>UPGRADED PROTOCOL DESIGN</h2>
+      <div class="accent-line"></div>
+    </div>
+    
+    <div class="features-grid">
+      <!-- Card 1 -->
+      <div class="feature-card glass-panel">
+        <div class="card-glow magenta"></div>
+        <div class="icon-box">🔊</div>
+        <h3>Web Audio Synthesizer</h3>
+        <p>Programmatic sound generation using real-time oscillators. Zero heavy audio assets, lightweight footprint, and completely offline-friendly.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feature-card glass-panel">
+        <div class="card-glow aqua"></div>
+        <div class="icon-box">💥</div>
+        <h3>Juiced Canvas Physics</h3>
+        <p>Visually satisfying particles, smooth motion trails, dynamic canvas glows, and screen shake on brick shatters that bring the grid to life.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="feature-card glass-panel">
+        <div class="card-glow amber"></div>
+        <div class="icon-box">⚡</div>
+        <h3>Tactical Power-Ups</h3>
+        <p>Trigger five different arcade boosters: Multi-Ball, Laser Paddle, wide Paddle Flux, bottom Barrier Net Shield, and Temporal Slow Motion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Playable Demo Section -->
+  <section id="demo" class="demo-section">
+    <div class="section-header">
+      <span class="section-tag">ONLINE SIMULATOR</span>
+      <h2>PLAY THE PROTOTYPE</h2>
+      <p>Test the exact arcade extension experience right here in your browser tab. Use mouse, touch, or A/D keys.</p>
+      <div class="accent-line"></div>
+    </div>
+
+    <!-- Live Game Container -->
+    <div class="demo-container">
+      <div class="game-console glass-panel">
+        
+        <!-- HUD Bar -->
+        <div class="game-hud">
+          <div class="hud-item score">
+            <span class="hud-label">SCORE</span>
+            <span id="hud-score-value" class="hud-val">000000</span>
+          </div>
+          <div class="hud-item multiplier">
+            <span class="hud-label">MULTIPLIER</span>
+            <span id="hud-multiplier-value" class="hud-val glow-txt">x1.0</span>
+          </div>
+          <div class="hud-item lives">
+            <span class="hud-label">LIVES</span>
+            <div id="hud-lives-container" class="lives-indicators">
+              <span class="heart active"></span>
+              <span class="heart active"></span>
+              <span class="heart active"></span>
+            </div>
+          </div>
+          <div class="hud-item pause-action">
+            <button id="btn-hud-pause" class="pause-icon-btn" title="Pause Game">
+              <svg viewBox="0 0 24 24" class="svg-icon">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Canvas Game Wrap -->
+        <div class="canvas-wrapper">
+          <canvas id="game-canvas" width="600" height="420"></canvas>
+          
+          <!-- Web Demo Main Menu Overlay (Site specific) -->
+          <div id="demo-menu-overlay" class="canvas-overlay active">
+            <h2 class="overlay-title pulse">CYBER-BRICKS DEMO</h2>
+            <p class="overlay-subtitle">CLICK TO INITIALIZE SIMULATOR</p>
+            <div class="overlay-buttons">
+              <button id="btn-start-demo" class="menu-btn primary-glow">INITIATE GRID</button>
+            </div>
+          </div>
+
+          <!-- Pause Overlay -->
+          <div id="overlay-pause" class="canvas-overlay">
+            <h2 class="overlay-title pulse">DIAGNOSTICS PAUSED</h2>
+            <div class="overlay-buttons">
+              <button id="btn-resume-game" class="menu-btn primary-glow">RESUME PROCESS</button>
+              <button id="btn-quit-game" class="menu-btn secondary-glow">ABORT CORE</button>
+            </div>
+          </div>
+
+          <!-- Game Over Overlay -->
+          <div id="overlay-gameover" class="canvas-overlay">
+            <h2 class="overlay-title error-txt glow-red">SYSTEM FAIL</h2>
+            <p class="overlay-subtitle">ALL CORES DEPLETED</p>
+            <div class="overlay-stats">
+              <div class="stat-row">
+                <span>SCORE:</span>
+                <span id="lbl-over-score">0</span>
+              </div>
+            </div>
+            <div class="overlay-buttons">
+              <button id="btn-restart-game" class="menu-btn primary-glow">REBOOT GRID</button>
+            </div>
+          </div>
+
+          <!-- Level Completed Overlay -->
+          <div id="overlay-complete" class="canvas-overlay">
+            <h2 class="overlay-title success-txt glow-green">SECTOR CLEARED</h2>
+            <p class="overlay-subtitle">GRID COMPLETED</p>
+            <div class="overlay-stats">
+              <div class="stat-row">
+                <span>SCORE:</span>
+                <span id="lbl-comp-score">0</span>
+              </div>
+            </div>
+            <div class="overlay-buttons">
+              <button id="btn-next-level" class="menu-btn primary-glow">NEXT SECTOR</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Interactive side instructions -->
+      <div class="demo-info glass-panel">
+        <h3>CONTROLS PROTOCOL</h3>
+        <ul class="control-list">
+          <li><strong>Mouse / Touch</strong>: Drag horizontally to guide the paddle.</li>
+          <li><strong>Keyboard</strong>: Arrow keys or <kbd>A</kbd> / <kbd>D</kbd> to slide, <kbd>SPACE</kbd> to launch ball / shoot lasers.</li>
+          <li><strong>Pause</strong>: Press <kbd>ESC</kbd> or click pause icon.</li>
+        </ul>
+
+        <div class="settings-mini">
+          <h4>GRID CALIBRATION</h4>
+          <div class="setting-item">
+            <span>SOUND FX</span>
+            <label class="switch">
+              <input type="checkbox" id="chk-audio" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <span>IMPACT SHAKE</span>
+            <label class="switch">
+              <input type="checkbox" id="chk-shake" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Listings / Download Badges Section -->
+  <section id="stores" class="stores-section">
+    <div class="section-header">
+      <span class="section-tag">COMPATIBILITY</span>
+      <h2>AVAILABLE FOR ALL MAJOR BROWSERS</h2>
+      <p>Click below to download the extension from your browser's official store extension registry.</p>
+      <div class="accent-line"></div>
+    </div>
+
+    <div class="store-badges">
+      <a href="#" class="badge-card glass-panel chrome">
+        <span class="store-icon">🌐</span>
+        <div class="badge-text">
+          <span class="sub">Add to</span>
+          <span class="store-name">Chrome Web Store</span>
+        </div>
+      </a>
+      <a href="#" class="badge-card glass-panel edge">
+        <span class="store-icon">🌀</span>
+        <div class="badge-text">
+          <span class="sub">Add to</span>
+          <span class="store-name">Edge Add-ons</span>
+        </div>
+      </a>
+      <a href="#" class="badge-card glass-panel firefox">
+        <span class="store-icon">🦊</span>
+        <div class="badge-text">
+          <span class="sub">Get for</span>
+          <span class="store-name">Firefox Add-ons</span>
+        </div>
+      </a>
+      <a href="#" class="badge-card glass-panel safari">
+        <span class="store-icon">🍏</span>
+        <div class="badge-text">
+          <span class="sub">Install on</span>
+          <span class="store-name">Safari App Store</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="logo">
+          <span class="logo-txt">CYBER-BRICKS</span>
+        </div>
+        <p>Break the brick layout protocol from any page. Crafted with clean HTML5 Canvas, Web Audio synthesizers, and WebExtensions API.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" class="footer-link">GitHub Codebase</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Store Listing Info</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cyber-Bricks Arcade. All protocols verified.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

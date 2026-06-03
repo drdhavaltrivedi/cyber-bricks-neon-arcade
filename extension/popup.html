@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber-Bricks: Neon Arcade</title>
+  <!-- Google Fonts for futuristic cyberpunk aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="theme-magenta">
+  <div id="app-container" class="glass-panel">
+    <!-- Top Header Bar -->
+    <header class="app-header">
+      <div class="logo-container">
+        <span class="logo-neon-text" id="logo-text">CYBER-BRICKS</span>
+        <span class="logo-subtext">NEON ARCADE</span>
+      </div>
+      <div class="header-actions">
+        <button id="btn-fullscreen" class="icon-btn" title="Play in Fullscreen Tab">
+          <svg viewBox="0 0 24 24" class="svg-icon">
+            <path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Panels -->
+    <main class="panels-container">
+      
+      <!-- 1. Main Menu Screen -->
+      <section id="panel-menu" class="screen-panel active">
+        <div class="menu-decor">
+          <div class="glow-orb magenta"></div>
+          <div class="glow-orb cyan"></div>
+        </div>
+        <div class="menu-hero">
+          <h1 class="hero-title animate-glow">CYBER-BRICKS</h1>
+          <p class="hero-tagline">BREAKOUT PROTOCOL v1.0.0</p>
+        </div>
+        
+        <div class="menu-buttons">
+          <button id="btn-play-game" class="menu-btn primary-glow">INITIATE GAME</button>
+          <button id="btn-level-select" class="menu-btn secondary-glow">LEVEL SELECT</button>
+          <button id="btn-how-to-play" class="menu-btn secondary-glow">HOW TO PLAY</button>
+          <button id="btn-settings" class="menu-btn secondary-glow">SETTINGS</button>
+        </div>
+
+        <div class="menu-stats">
+          <div class="high-score-box">
+            <span class="stat-label">GRID HIGH SCORE</span>
+            <span id="display-high-score" class="stat-value">000,000</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Level Select Screen -->
+      <section id="panel-levels" class="screen-panel">
+        <h2 class="panel-title">SECTOR SELECT</h2>
+        <div class="levels-grid" id="levels-grid-container">
+          <!-- Dynamically generated level cards will go here -->
+        </div>
+        <button id="btn-levels-back" class="menu-btn back-btn">RETURN TO MENU</button>
+      </section>
+
+      <!-- 3. Settings Screen -->
+      <section id="panel-settings" class="screen-panel">
+        <h2 class="panel-title">CONFIG SYSTEM</h2>
+        
+        <div class="settings-list">
+          <!-- Sound Toggle -->
+          <div class="setting-item">
+            <div class="setting-info">
+              <span class="setting-label">AUDIO FREQUENCY</span>
+              <span class="setting-desc">Toggle synthesized sound effects</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="chk-audio" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <!-- Volume Control -->
+          <div class="setting-item">
+            <div class="setting-info">
+              <span class="setting-label">VOLUME</span>
+              <span class="setting-desc">Adjust game audio gain</span>
+            </div>
+            <div class="range-container">
+              <input type="range" id="rng-volume" min="0" max="100" value="50" class="neon-range">
+              <span id="lbl-volume" class="range-value">50%</span>
+            </div>
+          </div>
+
+          <!-- Screenshake Toggle -->
+          <div class="setting-item">
+            <div class="setting-info">
+              <span class="setting-label">IMPACT SHAKE</span>
+              <span class="setting-desc">Camera shake on wall/brick impact</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="chk-shake" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <!-- Theme Selector -->
+          <div class="setting-item vertical">
+            <span class="setting-label">COLOR MATRIX</span>
+            <div class="theme-options">
+              <button id="btn-theme-magenta" class="theme-opt active" data-theme="magenta" title="Cyber Magenta">
+                <span class="dot magenta"></span>Magenta
+              </button>
+              <button id="btn-theme-aqua" class="theme-opt" data-theme="aqua" title="Aqua Grid">
+                <span class="dot aqua"></span>Aqua
+              </button>
+              <button id="btn-theme-amber" class="theme-opt" data-theme="amber" title="Amber Synth">
+                <span class="dot amber"></span>Amber
+              </button>
+              <button id="btn-theme-emerald" class="theme-opt" data-theme="emerald" title="Emerald Circuit">
+                <span class="dot emerald"></span>Emerald
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button id="btn-settings-back" class="menu-btn back-btn">APPLY & RETURN</button>
+      </section>
+
+      <!-- 4. How to Play Screen -->
+      <section id="panel-howto" class="screen-panel">
+        <h2 class="panel-title">TUTORIAL FILE</h2>
+        
+        <div class="howto-content scrollable">
+          <div class="howto-section">
+            <h3>CONTROLS</h3>
+            <p><span class="key-cap">←</span> <span class="key-cap">→</span> / <span class="key-cap">A</span> <span class="key-cap">D</span> : Navigate paddle left and right</p>
+            <p><span class="key-cap">SPACE</span> : Launch ball / Shoot lasers</p>
+            <p><span class="key-cap">MOUSE / TOUCH</span> : Slide across screens to guide paddle</p>
+            <p><span class="key-cap">P</span> / <span class="key-cap">ESC</span> : Pause game diagnostics</p>
+          </div>
+          
+          <div class="howto-section">
+            <h3>POWER-UPS</h3>
+            <ul class="powerup-list">
+              <li><span class="p-icon multi">■</span> <span class="p-name">MULTI-BALL</span>: Splits active balls into three</li>
+              <li><span class="p-icon laser">■</span> <span class="p-name">LASER CANNON</span>: Fire energy bursts with SPACE</li>
+              <li><span class="p-icon wide">■</span> <span class="p-name">PADDLE FLUX</span>: Increase width of your paddle</li>
+              <li><span class="p-icon shield">■</span> <span class="p-name">NET SHIELD</span>: Temporary barrier at bottom edge</li>
+              <li><span class="p-icon slow">■</span> <span class="p-name">TEMPORAL SLOW</span>: Dilate time to slow ball speed</li>
+            </ul>
+          </div>
+        </div>
+
+        <button id="btn-howto-back" class="menu-btn back-btn">RETURN TO MENU</button>
+      </section>
+
+      <!-- 5. Game Arena Screen -->
+      <section id="panel-game" class="screen-panel">
+        <!-- Game HUD -->
+        <div class="game-hud">
+          <div class="hud-item score">
+            <span class="hud-label">SCORE</span>
+            <span id="hud-score-value" class="hud-val">000000</span>
+          </div>
+          <div class="hud-item multiplier">
+            <span class="hud-label">MULTIPLIER</span>
+            <span id="hud-multiplier-value" class="hud-val glow-txt">x1</span>
+          </div>
+          <div class="hud-item lives">
+            <span class="hud-label">LIVES</span>
+            <div id="hud-lives-container" class="lives-indicators">
+              <!-- Hearts or dots representing lives -->
+              <span class="heart active"></span>
+              <span class="heart active"></span>
+              <span class="heart active"></span>
+            </div>
+          </div>
+          <div class="hud-item pause-action">
+            <button id="btn-hud-pause" class="pause-icon-btn" title="Pause Game">
+              <svg viewBox="0 0 24 24" class="svg-icon">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Canvas Game Window -->
+        <div class="canvas-wrapper">
+          <canvas id="game-canvas" width="600" height="420"></canvas>
+          
+          <!-- Screen Overlays inside Arena -->
+          
+          <!-- Pause Overlay -->
+          <div id="overlay-pause" class="canvas-overlay">
+            <h2 class="overlay-title pulse">DIAGNOSTICS PAUSED</h2>
+            <div class="overlay-buttons">
+              <button id="btn-resume-game" class="menu-btn primary-glow">RESUME PROCESS</button>
+              <button id="btn-quit-game" class="menu-btn secondary-glow">ABORT MISSION</button>
+            </div>
+          </div>
+
+          <!-- Game Over Overlay -->
+          <div id="overlay-gameover" class="canvas-overlay">
+            <h2 class="overlay-title error-txt glow-red">SYSTEM FAIL</h2>
+            <p class="overlay-subtitle">ALL LIVES DEPLETED</p>
+            <div class="overlay-stats">
+              <div class="stat-row">
+                <span>FINAL SCORE:</span>
+                <span id="lbl-over-score">0</span>
+              </div>
+              <div class="stat-row">
+                <span>SECTOR REACHED:</span>
+                <span id="lbl-over-level">1</span>
+              </div>
+            </div>
+            <div class="overlay-buttons">
+              <button id="btn-restart-game" class="menu-btn primary-glow">REBOOT GRID</button>
+              <button id="btn-gameover-quit" class="menu-btn secondary-glow">MENU CORE</button>
+            </div>
+          </div>
+
+          <!-- Level Completed Overlay -->
+          <div id="overlay-complete" class="canvas-overlay">
+            <h2 class="overlay-title success-txt glow-green">SECTOR CLEARED</h2>
+            <p class="overlay-subtitle">MATRIX STABILIZED</p>
+            <div class="overlay-stats">
+              <div class="stat-row">
+                <span>SCORE MULTIPLIER:</span>
+                <span id="lbl-comp-multiplier">x1.5</span>
+              </div>
+              <div class="stat-row">
+                <span>ACCUMULATED SCORE:</span>
+                <span id="lbl-comp-score">0</span>
+              </div>
+            </div>
+            <div class="overlay-buttons">
+              <button id="btn-next-level" class="menu-btn primary-glow">NEXT SECTOR</button>
+              <button id="btn-complete-quit" class="menu-btn secondary-glow">MENU CORE</button>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Loading scripts -->
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
