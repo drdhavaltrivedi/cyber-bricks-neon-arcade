@@ -904,9 +904,23 @@ input:checked + .slider:before {
 }
 
 .store-icon {
-  font-size: 32px;
   transition: transform var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.store-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+/* Brand Colors for Store Badges */
+.badge-card.chrome .store-icon { color: #4285f4; }
+.badge-card.edge .store-icon { color: #0078D7; }
+.badge-card.firefox .store-icon { color: #FF9400; }
+.badge-card.safari .store-icon { color: #00CDFF; }
 
 .badge-text {
   display: flex;
