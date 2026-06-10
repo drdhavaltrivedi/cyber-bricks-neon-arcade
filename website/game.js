@@ -178,6 +178,12 @@ class Game {
         this.triggerSpaceAction();
       }
     });
+
+    this.canvas.addEventListener('mousedown', (e) => {
+      if (this.state === 'PLAYING' && e.button === 0) {
+        this.triggerSpaceAction();
+      }
+    });
   }
 
   triggerSpaceAction() {

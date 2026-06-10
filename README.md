@@ -86,9 +86,9 @@ This repository is optimized for one-click Vercel deployments.
 
 ## 🕹️ Gameplay & Controls Protocol
 
-- **Launch Ball**: Press `SPACE` (Keyboard) or tap screen (Touch).
-- **Move Paddle**: Arrow keys or `A` / `D` (Keyboard), drag mouse horizontal (Mouse), or slide screen (Touch).
-- **Shoot Lasers** (Laser Power-Up active): Press `SPACE` or tap screen.
+- **Launch Ball**: Press `SPACE` (Keyboard), Left-Click (Mouse), or tap screen (Touch).
+- **Move Paddle**: Arrow keys or `A` / `D` (Keyboard), drag mouse horizontally (Mouse), or slide screen (Touch).
+- **Shoot Lasers** (Laser Power-Up active): Press `SPACE`, Left-Click (Mouse), or tap screen.
 - **Pause diagnostics**: Press `ESC` or `P` key.
 
 ### Power-up Calibration:
