@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Cyber-Bricks: Neon Arcade",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Retro-synthwave brick breaker arcade game with rich visuals and synthesized sound. Play from your toolbar or in full screen!",
   "permissions": [
     "storage"
